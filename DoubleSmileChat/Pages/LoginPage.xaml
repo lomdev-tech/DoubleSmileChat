@@ -1,0 +1,41 @@
+﻿<local:BasePage x:TypeArguments="vm:LoginViewModel"
+      x:Class="DoubleSmileChat.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DoubleSmileChat.Pages"
+      xmlns:vc="clr-namespace:DoubleSmileChat.ValueConverters"
+      xmlns:vm="clr-namespace:DoubleSmileChat.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoginPage"
+      x:Name="Page"          
+                >
+    <!--
+        页面只放"内容"。蓝色底 + emoji 背景已上移到 MainWindow 的窗口外壳层，
+        所以页面动画只会带走上层内容，背景留在原地。
+    -->
+    <!--ScrollViewer 滚动容器-->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+            <Border Background="{StaticResource ForgroundLightBrush}" CornerRadius="10" Padding="15 50 15 15" Width="300" Margin="50 50 50 0">
+                <StackPanel>
+                    <TextBlock Text="注册" Foreground="{StaticResource ForgroundMainBrush}" FontFamily="{StaticResource LatoRegular}" FontSize="{StaticResource FontSizeLarge}"/>
+                    <TextBlock Text="it's about to get fun" Foreground="{StaticResource ForegroundPlaceholderBrush}" FontSize="{StaticResource FontSizeRegular}"/>
+                    <TextBox Text="{Binding Email}"  Tag="请输入用户名" Style="{StaticResource InputButton}"/>
+                    <PasswordBox x:Name="PasswordText" Tag="请输入密码" Style="{StaticResource InputButton}" vc:PasswordBoxMonitor.MonitorPassword="True"/>
+                    <Button  Style="{StaticResource NextButton}" 
+                             FontSize="{StaticResource FontSizeSmall}" 
+                             Content="下一步"  
+                             HorizontalAlignment="Center"
+                             Command="{Binding LoginCommand}"
+                             CommandParameter="{Binding ElementName=Page}"
+                             />
+                </StackPanel>
+            </Border>
+            <Button Content="已有账号？去登陆" Style="{StaticResource HadAccountButton}"/>
+        </StackPanel>
+    </ScrollViewer>
+
+</local:BasePage>

@@ -1,0 +1,1176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dock.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Dock.Model.Alignment">
+            <summary>
+            Defines dock alignment.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Alignment.Unset">
+            <summary>
+            Unset alignment.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Alignment.Left">
+            <summary>
+            Left alignment.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Alignment.Bottom">
+            <summary>
+            Bottom alignment.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Alignment.Right">
+            <summary>
+            Right alignment.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Alignment.Top">
+            <summary>
+            Top alignment.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IDocumentDock">
+            <summary>
+            Document dock contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IDocumentTab">
+            <summary>
+            Document tab contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.ILayoutDock">
+            <summary>
+            Layout dock contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.ILayoutDock.Orientation">
+            <summary>
+            Gets or sets layout orientation.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IPinDock">
+            <summary>
+            Pin dock contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IPinDock.Alignment">
+            <summary>
+            Gets or sets dock alignment.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IPinDock.IsExpanded">
+            <summary>
+            Gets or sets if the Dock is expanded.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IPinDock.AutoHide">
+            <summary>
+            Gets or sets if the Dock auto hides view when pointer is not over.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IRootDock">
+            <summary>
+            Root dock contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IRootDock.Window">
+            <summary>
+            Gets or sets owner window.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IRootDock.Top">
+            <summary>
+            Gets or sets top pin dock.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IRootDock.Bottom">
+            <summary>
+            Gets or sets bottom pin dock.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IRootDock.Left">
+            <summary>
+            Gets or sets left pin dock.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.Controls.IRootDock.Right">
+            <summary>
+            Gets or sets right pin dock.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.ISplitterDock">
+            <summary>
+            Splitter dock contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.ITabDock">
+            <summary>
+            Tab dock contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IToolDock">
+            <summary>
+            Tool dock contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Controls.IToolTab">
+            <summary>
+            Tool tab contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.DockFactoryBase">
+            <summary>
+            Dock factory base class.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.DockFactoryBase.ContextLocator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Dock.Model.DockFactoryBase.HostLocator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Dock.Model.DockFactoryBase.ViewLocator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateList``1(``0[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateRootDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreatePinDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateLayoutDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateSplitterDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateToolDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateDocumentDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateDockWindow">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateToolTab">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateDocumentTab">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateView">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateDock">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.InitLayout(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateLayout">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.GetContext(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.GetHost(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Update(Dock.Model.IDockWindow,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Update(Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.AddView(Dock.Model.IDock,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.InsertView(Dock.Model.IDock,Dock.Model.IView,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.AddWindow(Dock.Model.IDock,Dock.Model.IDockWindow)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.RemoveWindow(Dock.Model.IDockWindow)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SetCurrentView(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SetIsActive(Dock.Model.IView,System.Boolean)">
+            <summary>
+            Sets the IsActive flag.
+            </summary>
+            <param name="view">the view to try and set IsActive on.</param>
+            <param name="active">value to set</param>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SetFocusedView(Dock.Model.IDock,Dock.Model.IView)">
+            <inheritdoc />
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.FindRoot(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.FindView(Dock.Model.IDock,System.Func{Dock.Model.IView,System.Boolean})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.PinView(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.RemoveView(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CloseView(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.MoveView(Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.MoveView(Dock.Model.IDock,Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Move(Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Swap(Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SwapView(Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SwapView(Dock.Model.IDock,Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Replace(Dock.Model.IView,Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateSplitLayout(Dock.Model.IDock,Dock.Model.IView,Dock.Model.DockOperation)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.Split(Dock.Model.IDock,Dock.Model.IView,Dock.Model.DockOperation)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToFill(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToLeft(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToRight(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToTop(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToBottom(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.SplitToWindow(Dock.Model.IDock)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockFactoryBase.CreateWindowFrom(Dock.Model.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dock.Model.DockManager">
+            <summary>
+            Docking manager.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.DockManager.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:Dock.Model.DockManager.ScreenPosition">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.DockManager.Validate(Dock.Model.IView,Dock.Model.IView,Dock.Model.DragAction,Dock.Model.DockOperation,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dock.Model.DockOperation">
+            <summary>
+            Defines the available dock operations.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Fill">
+            <summary>
+            Fill dock.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Left">
+            <summary>
+            Dock to left.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Bottom">
+            <summary>
+            Dock to bottom.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Right">
+            <summary>
+            Dock to right.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Top">
+            <summary>
+            Dock to top.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DockOperation.Window">
+            <summary>
+            Dock to window.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.DockPoint">
+            <summary>
+            Point structure.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.DockPoint.X">
+            <summary>
+            Gets X coordinate.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.DockPoint.Y">
+            <summary>
+            Gets Y coordinate.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.DockPoint.#ctor(System.Double,System.Double)">
+            <summary>
+            Initialize the new instance of the <see cref="T:Dock.Model.DockPoint"/>.
+            </summary>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+        </member>
+        <member name="M:Dock.Model.DockPoint.ToString">
+            <summary>
+            Returns the string representation of the point.
+            </summary>
+            <returns>The string representation of the point.</returns>
+        </member>
+        <member name="T:Dock.Model.DragAction">
+            <summary>
+            Defines the available drag actions.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DragAction.None">
+            <summary>
+            No action.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DragAction.Copy">
+            <summary>
+            Copy action.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DragAction.Move">
+            <summary>
+            Move action.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.DragAction.Link">
+            <summary>
+            Link action.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.HostAdapter">
+            <summary>
+            Host adapter for the <see cref="T:Dock.Model.IDockWindow"/>.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.HostAdapter.#ctor(Dock.Model.IDockWindow)">
+            <summary>
+            Initializes new instance of the <see cref="T:Dock.Model.HostAdapter"/> class.
+            </summary>
+            <param name="window">The window instance.</param>
+        </member>
+        <member name="M:Dock.Model.HostAdapter.Save">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.HostAdapter.Present(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.HostAdapter.Exit">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dock.Model.IDock">
+            <summary>
+            Dock contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.Views">
+            <summary>
+            Gets or sets views.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.CurrentView">
+            <summary>
+            Gets or sets current view.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.DefaultView">
+            <summary>
+            Gets or sets default view.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.FocusedView">
+            <summary>
+            Gets or sets the focused view.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.Proportion">
+            <summary> 
+            Gets or sets splitter proportion. 
+            </summary> 
+        </member>
+        <member name="P:Dock.Model.IDock.IsActive">
+            <summary>
+            Gets or sets if the view is the currently active.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.IsCollapsable">
+            <summary>
+            Gets or sets if the Dock collapses when all its children are removed.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.CanGoBack">
+            <summary>
+            Gets a value that indicates whether there is at least one entry in back navigation history.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.CanGoForward">
+            <summary>
+            Gets a value that indicates whether there is at least one entry in forward navigation history.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.Windows">
+            <summary>
+            Gets or sets windows.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDock.Factory">
+            <summary>
+            Gets or sets dock factory.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDock.GoBack">
+            <summary>
+            Navigates to the most recent entry in back navigation history, if there is one.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDock.GoForward">
+            <summary>
+            Navigate to the most recent entry in forward navigation history, if there is one.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDock.Navigate(System.Object)">
+            <summary>
+            Navigate to content that is contained by an object.
+            </summary>
+            <param name="root">An object that contains the content to navigate to.</param>
+        </member>
+        <member name="M:Dock.Model.IDock.ShowWindows">
+            <summary>
+            Show windows.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDock.ExitWindows">
+            <summary>
+            Exit windows.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDock.Close">
+            <summary>
+            Close layout.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.IDockFactory">
+            <summary>
+            Dock factory contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockFactory.ContextLocator">
+            <summary>
+            Gets or sets <see cref="P:Dock.Model.IView.Context"/> locator registry.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockFactory.HostLocator">
+            <summary>
+            Gets or sets <see cref="T:Dock.Model.IDockHost"/> locator registry.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockFactory.ViewLocator">
+            <summary>
+            Gets or sets <see cref="T:Dock.Model.IView"/> locator registry.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateList``1(``0[])">
+            <summary>
+            Creates list of type <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T">The list item type.</typeparam>
+            <param name="items">The initial list items.</param>
+            <returns>The new instance of <see cref="T:System.Collections.Generic.IList`1"/>.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateRootDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IRootDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IRootDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreatePinDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IPinDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IPinDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateLayoutDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.ILayoutDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.ILayoutDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateSplitterDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.ISplitterDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.ISplitterDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateToolDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IToolDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IToolDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateDocumentDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IDocumentDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IDocumentDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateDockWindow">
+            <summary>
+            Creates <see cref="T:Dock.Model.IDockWindow"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.IDockWindow"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateToolTab">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IToolTab"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IToolTab"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateDocumentTab">
+            <summary>
+            Creates <see cref="T:Dock.Model.Controls.IDocumentTab"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.Controls.IDocumentTab"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateView">
+            <summary>
+            Creates <see cref="T:Dock.Model.IView"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.IView"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateDock">
+            <summary>
+            Creates <see cref="T:Dock.Model.IDock"/>.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.IDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateLayout">
+            <summary>
+            Creates layout.
+            </summary>
+            <returns>The new instance of the <see cref="T:Dock.Model.IDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.InitLayout(Dock.Model.IView)">
+            <summary>
+            Initialize layout.
+            </summary>
+            <param name="layout">The layout to initialize.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.GetContext(System.String)">
+            <summary>
+            Gets context.
+            </summary>
+            <param name="id">The object id.</param>
+            <returns>The located context.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.GetHost(System.String)">
+            <summary>
+            Gets host.
+            </summary>
+            <param name="id">The host id.</param>
+            <returns>The located host.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Update(Dock.Model.IDockWindow,Dock.Model.IView)">
+            <summary>
+            Updates window.
+            </summary>
+            <param name="window">The window to update.</param>
+            <param name="owner">The window owner view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Update(Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Update view.
+            </summary>
+            <param name="view">The view to update.</param>
+            <param name="parent">The parent view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.AddView(Dock.Model.IDock,Dock.Model.IView)">
+            <summary>
+            Adds <see cref="T:Dock.Model.IView"/> into dock <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="dock">The parent dock.</param>
+            <param name="view">The view to add.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.InsertView(Dock.Model.IDock,Dock.Model.IView,System.Int32)">
+            <summary>
+            Inserts <see cref="T:Dock.Model.IView"/> into dock <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="dock">The parent dock.</param>
+            <param name="view">The view to add.</param>
+            <param name="index">The view index.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.AddWindow(Dock.Model.IDock,Dock.Model.IDockWindow)">
+            <summary>
+            Adds window into dock windows list.
+            </summary>
+            <param name="dock">The window dock.</param>
+            <param name="window">The window to add.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.RemoveWindow(Dock.Model.IDockWindow)">
+            <summary>
+            Removes window from owner windows list.
+            </summary>
+            <param name="window">The window to remove.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SetCurrentView(Dock.Model.IView)">
+            <summary>
+            Sets a currently selected view. If the view is contained inside an dock it
+            will become the selected tab.
+            </summary>
+            <param name="view">The view to select.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SetFocusedView(Dock.Model.IDock,Dock.Model.IView)">
+            <summary>
+            Sets the currently focused view updating IsActive flags.
+            </summary>
+            <param name="dock">The dock to set the focused view on.</param>
+            <param name="view">The view to set.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.FindRoot(Dock.Model.IView)">
+            <summary>
+            Searches for root view.
+            </summary>
+            <param name="view">The view to find root for.</param>
+            <returns>The root view instance or null if root view was not found.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.FindView(Dock.Model.IDock,System.Func{Dock.Model.IView,System.Boolean})">
+            <summary>
+            Searches dock for view.
+            </summary>
+            <param name="dock">The views dock.</param>
+            <param name="predicate">The predicate to filter views.</param>
+            <returns>The view instance or null if view was not found.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.PinView(Dock.Model.IView)">
+            <summary>
+            Pins views.
+            </summary>
+            <param name="view">The view to pin.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.RemoveView(Dock.Model.IView)">
+            <summary>
+            Removes view from parent <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="view">The view to remove.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CloseView(Dock.Model.IView)">
+            <summary>
+            Removes view from parent <see cref="P:Dock.Model.IDock.Views"/> collection, and call IView.OnClose.
+            </summary>
+            <param name="view">The view to remove.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.MoveView(Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Moves view inside <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="dock">The views dock.</param>
+            <param name="sourceView">The source view.</param>
+            <param name="targetView">The target view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.MoveView(Dock.Model.IDock,Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Moves view into another <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="sourceDock">The source views dock.</param>
+            <param name="targetDock">The target views dock.</param>
+            <param name="sourceView">The source view.</param>
+            <param name="targetView">The target view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Move(Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Moves view into another <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="first">The first view.</param>
+            <param name="second">The second view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Swap(Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Swaps view in parents <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="first">The first view.</param>
+            <param name="second">The second view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SwapView(Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Swaps view in inside <see cref="P:Dock.Model.IDock.Views"/> collections.
+            </summary>
+            <param name="dock">The views dock.</param>
+            <param name="sourceView">The source view.</param>
+            <param name="targetView">The target view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SwapView(Dock.Model.IDock,Dock.Model.IDock,Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Swaps view into between <see cref="P:Dock.Model.IDock.Views"/> collections.
+            </summary>
+            <param name="sourceDock">The source views dock.</param>
+            <param name="targetDock">The target views dock.</param>
+            <param name="sourceView">The source view.</param>
+            <param name="targetView">The target view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Replace(Dock.Model.IView,Dock.Model.IView)">
+            <summary>
+            Replaces source view with destination view in source view parent <see cref="P:Dock.Model.IDock.Views"/> collection.
+            </summary>
+            <param name="source">The source view.</param>
+            <param name="destination">The destination view.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateSplitLayout(Dock.Model.IDock,Dock.Model.IView,Dock.Model.DockOperation)">
+            <summary>
+            Creates a new split layout from source view.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+            <param name="view">The optional view to add to splitted side.</param>
+            <param name="operation">The dock operation.</param>
+            <returns>The new instance of the <see cref="T:Dock.Model.IDock"/> class.</returns>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.Split(Dock.Model.IDock,Dock.Model.IView,Dock.Model.DockOperation)">
+            <summary>
+            Splits dock and updates parent layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+            <param name="view">The optional view to add to splitted side.</param>
+            <param name="operation"> The dock operation to perform.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToFill(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Fill"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToLeft(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Left"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToRight(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Right"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToTop(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Top"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToBottom(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Bottom"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.SplitToWindow(Dock.Model.IDock)">
+            <summary>
+            Splits dock to the <see cref="F:Dock.Model.DockOperation.Window"/> and updates <see cref="P:Dock.Model.IView.Parent"/> layout.
+            </summary>
+            <param name="dock">The dock to perform operation on.</param>
+        </member>
+        <member name="M:Dock.Model.IDockFactory.CreateWindowFrom(Dock.Model.IView)">
+            <summary>
+            Creates dock window from source view.
+            </summary>
+            <param name="view">The view to embed into window.</param>
+            <returns>The new instance of the <see cref="T:Dock.Model.IDockWindow"/> class.</returns>
+        </member>
+        <member name="T:Dock.Model.IDockHost">
+            <summary>
+            Dock host contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockHost.IsTracked">
+            <summary>
+            Gets or sets value that indicates whether host size and position is tracked.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockHost.Window">
+            <summary>
+            Gets or sets dock window.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockHost.Present(System.Boolean)">
+            <summary>
+            Presents host.
+            </summary>
+            <param name="isDialog">The value that indicates whether window is dialog.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.Exit">
+            <summary>
+            Exits host.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetPosition(System.Double,System.Double)">
+            <summary>
+            Sets host position.
+            </summary>
+            <param name="x">The X coordinate of host.</param>
+            <param name="y">The Y coordinate of host.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.GetPosition(System.Double@,System.Double@)">
+            <summary>
+            Gets host position.
+            </summary>
+            <param name="x">The X coordinate of host.</param>
+            <param name="y">The Y coordinate of host.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetSize(System.Double,System.Double)">
+            <summary>
+            Sets host size.
+            </summary>
+            <param name="width">The host width.</param>
+            <param name="height">The host height.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.GetSize(System.Double@,System.Double@)">
+            <summary>
+            Gets host size.
+            </summary>
+            <param name="width">The host width.</param>
+            <param name="height">The host height.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetTopmost(System.Boolean)">
+            <summary>
+            Sets host topmost.
+            </summary>
+            <param name="topmost">The host topmost.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetTitle(System.String)">
+            <summary>
+            Sets host title.
+            </summary>
+            <param name="title">The host title.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetContext(System.Object)">
+            <summary>
+            Sets host context.
+            </summary>
+            <param name="context">The host context.</param>
+        </member>
+        <member name="M:Dock.Model.IDockHost.SetLayout(Dock.Model.IDock)">
+            <summary>
+            Sets host layout.
+            </summary>
+            <param name="layout">The host layout.</param>
+        </member>
+        <member name="T:Dock.Model.IDockManager">
+            <summary>
+            Docking manager contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockManager.Position">
+            <summary>
+            Gets or sets pointer position relative to event source.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockManager.ScreenPosition">
+            <summary>
+            Gets or sets pointer position relative to event source and translated to screen coordinates.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockManager.Validate(Dock.Model.IView,Dock.Model.IView,Dock.Model.DragAction,Dock.Model.DockOperation,System.Boolean)">
+            <summary>
+            Validates docking operation.
+            </summary>
+            <param name="sourceView">The source view.</param>
+            <param name="targetView">The target view.</param>
+            <param name="action">The drag action.</param>
+            <param name="operation">The dock operation.</param>
+            <param name="bExecute">The flag indicating whether to execute.</param>
+            <returns>True if docking operation can be executed otherwise false.</returns>
+        </member>
+        <member name="T:Dock.Model.IDockWindow">
+            <summary>
+            Dock window contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.X">
+            <summary>
+            Gets or sets window X coordinate.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Y">
+            <summary>
+            Gets or sets window X coordinate.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Width">
+            <summary>
+            Gets or sets window width.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Height">
+            <summary>
+            Gets or sets window height.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Topmost">
+            <summary>
+            Gets or sets whether this window appears on top of all other windows.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Title">
+            <summary>
+            Gets or sets window title.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Context">
+            <summary>
+            Gets or sets window context.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Owner">
+            <summary>
+            Gets or sets window owner view.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Factory">
+            <summary>
+            Gets or sets dock factory.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Layout">
+            <summary>
+            Gets or sets views layout.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IDockWindow.Host">
+            <summary>
+            Gets or sets dock window.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockWindow.Save">
+            <summary>
+            Saves window properties.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IDockWindow.Present(System.Boolean)">
+            <summary>
+            Presents window.
+            </summary>
+            <param name="isDialog">The value that indicates whether window is dialog.</param>
+        </member>
+        <member name="M:Dock.Model.IDockWindow.Exit">
+            <summary>
+            Exits window.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.IHostAdapter">
+            <summary>
+            Host adapter contract for the <see cref="T:Dock.Model.IDockWindow"/>.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IHostAdapter.Save">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDockWindow.Save"/> method.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IHostAdapter.Present(System.Boolean)">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDockWindow.Present(System.Boolean)"/> method.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.IHostAdapter.Exit">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDockWindow.Exit"/> method.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.INavigateAdapter">
+            <summary>
+            Navigate adapter contract for the <see cref="T:Dock.Model.IDock"/>.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.INavigateAdapter.CanGoBack">
+            <summary>
+            Gets a value that indicates whether there is at least one entry in back navigation history.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.INavigateAdapter.CanGoForward">
+            <summary>
+            Gets a value that indicates whether there is at least one entry in forward navigation history.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.GoBack">
+            <summary>
+            Navigates to the most recent entry in back navigation history, if there is one.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.GoForward">
+            <summary>
+            Navigate to the most recent entry in forward navigation history, if there is one.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.Navigate(System.Object,System.Boolean)">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDock.Navigate(System.Object)"/> method.
+            </summary>
+            <param name="root">An object that contains the content to navigate to.</param>
+            <param name="bSnapshot">The flag indicating whether to make snapshot.</param>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.ShowWindows">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDock.ShowWindows"/> method.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.ExitWindows">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDock.ExitWindows"/> method.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.INavigateAdapter.Close">
+            <summary>
+            Implementation of the <see cref="M:Dock.Model.IDock.Close"/> method.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.ITab">
+            <summary>
+            Tab contract.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.IView">
+            <summary>
+            View contract.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IView.Id">
+            <summary>
+            Gets or sets view id.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IView.Title">
+            <summary>
+            Gets or sets view title.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IView.Context">
+            <summary>
+            Gets or sets view context.
+            </summary>
+        </member>
+        <member name="P:Dock.Model.IView.Parent">
+            <summary>
+            Gets or sets view parent.
+            </summary>
+            <remarks>If parrent is null than view is root.</remarks>
+        </member>
+        <member name="M:Dock.Model.IView.OnClose">
+            <summary>
+            Called when the view is closed.
+            </summary>
+            <returns>true to accept the close, and false to cancel the close.</returns>
+        </member>
+        <member name="M:Dock.Model.IView.OnSelected">
+            <summary>
+            Called when the view becomes the selected view.
+            </summary>
+        </member>
+        <member name="T:Dock.Model.Logger">
+            <summary>
+            Dock logger.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.Logger.Log(System.String)">
+            <summary>
+            Logs a debug message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="T:Dock.Model.NavigateAdapter">
+            <summary>
+            Navigate adapter for the <see cref="T:Dock.Model.IDock"/>.
+            </summary>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.#ctor(Dock.Model.IDock)">
+            <summary>
+            Initializes new instance of the <see cref="T:Dock.Model.NavigateAdapter"/> class.
+            </summary>
+            <param name="dock">The dock instance.</param>
+        </member>
+        <member name="P:Dock.Model.NavigateAdapter.CanGoBack">
+            <inheritdoc/>
+        </member>
+        <member name="P:Dock.Model.NavigateAdapter.CanGoForward">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.GoBack">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.GoForward">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.Navigate(System.Object,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.ShowWindows">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.ExitWindows">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dock.Model.NavigateAdapter.Close">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dock.Model.Orientation">
+            <summary>
+            Defines vertical or horizontal orientation.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Orientation.Horizontal">
+            <summary>
+            Horizontal orientation.
+            </summary>
+        </member>
+        <member name="F:Dock.Model.Orientation.Vertical">
+            <summary>
+            Vertical orientation.
+            </summary>
+        </member>
+    </members>
+</doc>

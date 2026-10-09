@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DoubleSmileChat"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    >
+    <!--寻找目录静态资源字体 pack://application;,,,/Fonts/#Lato Regular 这是Pack Url：定位程序集中的资源-->
+    <FontFamily x:Key="LatoRegular">pack://application;,,,/Fonts/#Lato Regular</FontFamily>
+    <FontFamily x:Key="LatoThin">pack://application;,,,/Fonts/#Lato Thin</FontFamily>
+    <FontFamily x:Key="LatoBold">pack://application;,,,/Fonts/#Lato Bold</FontFamily>
+    <!--<FontFamily x:Key="LatoBold">pack://application;,,,/Fonts/#Lato Bold</FontFamily>
+    <FontFamily x:Key="LatoLight">pack://application;,,,/Fonts/#Lato Light</FontFamily>
+    <FontFamily x:Key="LatoHeavy">pack://application;,,,/Fonts/#Lato Heavy</FontFamily>
+    <FontFamily x:Key="LatoMedium">pack://application;,,,/Fonts/#Lato Medium</FontFamily>-->
+    <!--指定全局字体基本样式-->
+    <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+        <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+    </Style>
+
+    <!--默认继承样式
+    
+    以下几个组件文字默认使用Thin字体
+    /*
+    Button
+    Label
+    TextBox
+    TextBlock
+    ListView
+    */
+    剩下的可自指定Key ：LatoRegular
+    -->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}"/>
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}"/>
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}"/>
+    <!--定义字体大小-->
+    <system:Double x:Key="FontSizeRegular">20</system:Double>
+    <system:Double x:Key="FontSizeSmall">14</system:Double>
+    <system:Double x:Key="FontSizeLarge">30</system:Double>
+</ResourceDictionary>

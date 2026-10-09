@@ -1,0 +1,126 @@
+﻿<Window x:Class="DoubleSmileChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoubleSmileChat"
+        mc:Ignorable="d"
+        Icon="/images/Logo/logo-small.png"
+        x:Name="AppWindow"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="{Binding WindowMiniumWidth}"
+        MinHeight="{Binding WindowMiniumHeight}"
+        Title="DoubleSmile Chat" Height="600" Width="900">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border Padding="{Binding OuterMaginSizeThickness,FallbackValue=10}">
+                            <!--窗口边框和阴影-->
+                            <Grid>
+                                <Border Background="{StaticResource ForgroundLightBrush}"
+                                        CornerRadius="{Binding WindowCornerRadius,FallbackValue=10}">
+                                    <Border.Effect >
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.3"/>
+                                    </Border.Effect>
+                                </Border>
+                                <!--窗口内容-->
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <!--标题栏占位-->
+                                        <RowDefinition Height="{Binding TitleHeightGridLength,FallbackValue=35}"/>
+                                        <!--阴影占位-->
+                                        <!--<RowDefinition Height="auto"/>-->
+                                        <!--主界面占位-->
+                                        <RowDefinition Height="*"/>
+
+                                    </Grid.RowDefinitions>
+                                    <!--标题栏-->
+                                    <Grid  Grid.Row="0" Panel.ZIndex="1">
+                                        <Grid.ColumnDefinitions>
+                                            <!--Icon占位-->
+                                            <ColumnDefinition Width="auto"/>
+                                            <!--标题栏文字占位-->
+                                            <ColumnDefinition Width="*"/>
+                                            <!--窗口控制占位 (缩小、放大、关闭窗口)-->
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--Icon-->
+                                        <Button Style="{StaticResource SystemIconButton}" Command="{Binding MenuWindowCommand}">
+                                            <Image Grid.Column="0" Source="/images/Logo/logo-small.png"/>
+                                        </Button>
+                                        <!--标题栏文字-->
+                                        <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="0">
+                                            <!--绑定父模板的title-->
+                                            <!--FallBackValue 备用值 当Binding绑定失败会自动使用FallBackValue-->
+                                            <!--<TextBlock Foreground="{StaticResource FontColor1Brush}" FontSize="{StaticResource FontSizeLarge}"
+                                                       Style="{StaticResource HeaderText}"  Text="{Binding RelativeSource={RelativeSource 
+                                                       Mode=TemplatedParent},Path=Title,FallbackValue='DoubleSmile Chat'}"/>-->
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Double" Foreground="{StaticResource FontColor3Brush}" FontFamily="{StaticResource LatoBold}" FontSize="{StaticResource FontSizeRegular}"/>
+
+
+                                                <TextBlock Text="Smile" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource FontColor2Brush}" FontSize="{StaticResource FontSizeSmall}"/>
+
+                                                <TextBlock Text="Chat" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource FontColor1Brush}" FontSize="{StaticResource FontSizeRegular}"/>
+                                            </StackPanel>
+                                        </Viewbox>
+                                        <!--窗口控制按钮-->
+                                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+
+                                            <Button Style="{StaticResource WindowControlButton}" 
+                                                    Content="{StaticResource MinimizeIcon}" 
+                                                    Command="{Binding MinimizeWindowCommand}"/>
+
+                                            <Button Style="{StaticResource WindowControlButton}" 
+                                                    Content="{StaticResource MaximizeIcon}" 
+                                                    Command="{Binding MaximizeWindowCommand}"/>
+
+                                            <Button Style="{StaticResource WindowControlButtonDanger}" 
+                                                    Content="{StaticResource CloseIcon}" 
+                                                    Command="{Binding CloseWindowCommand}"/>
+
+                                        </StackPanel>
+                                    </Grid>
+                                    <!--主界面内容-->
+                                    <Border Grid.Row="1" Padding="{Binding InnerContentPadding}">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
+                      CaptionHeight="{Binding TitleHeight}"
+                      GlassFrameThickness="0"
+                      CornerRadius="0"
+                      />
+    </WindowChrome.WindowChrome>
+    <!--
+        窗口外壳背景层：蓝色底 + emoji 平铺背景。
+        放在 Frame 外面，页面滑入滑出时背景留在原地，不会被整页动画带走。
+    -->
+    <Border Background="{StaticResource FontColor4Brush}">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/images/Backgrounds/emoji-background.png"/>
+            </Grid.Background>
+            <Frame x:Name="MainFrame" Content="{Binding CurrentPage,Converter={local:ApplicationPageValueConverter}}"/>
+        </Grid>
+    </Border>
+</Window>

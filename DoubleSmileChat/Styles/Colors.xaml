@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DoubleSmileChat">
+    <Color  x:Key="BackgroundLight">#efefef</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}"/>
+
+    <Color  x:Key="BackgroundVeryLight">#fafafa</Color>
+    <SolidColorBrush x:Key="BackgroundVeryLightBrush" Color="{StaticResource BackgroundVeryLight}"/>
+
+    <Color  x:Key="ForegroundMain">#686868</Color>
+    <SolidColorBrush x:Key="ForgroundMainBrush" Color="{StaticResource ForegroundMain}"/>
+
+    <!-- 占位符专用浅灰 -->
+    <Color  x:Key="ForegroundPlaceholder">#AAAAAA</Color>
+    <SolidColorBrush x:Key="ForegroundPlaceholderBrush" Color="{StaticResource ForegroundPlaceholder}"/>
+    
+    <Color  x:Key="ForegroundLight">#ffffff</Color>
+    <SolidColorBrush x:Key="ForgroundLightBrush" Color="{StaticResource ForegroundLight}"/>
+
+    <Color  x:Key="ForegroundVeryDark">#000000</Color>
+    <SolidColorBrush x:Key="ForgroundDarkBrush" Color="{StaticResource ForegroundVeryDark}"/>
+
+    <Color  x:Key="FontColor1">#EC4899</Color>
+    <SolidColorBrush x:Key="FontColor1Brush" Color="{StaticResource FontColor1}"/>
+
+    <Color  x:Key="FontColor2">#06B6D4</Color>
+    <SolidColorBrush x:Key="FontColor2Brush" Color="{StaticResource FontColor2}"/>
+    
+    <Color  x:Key="FontColor3">#7C3AED</Color>
+    <SolidColorBrush x:Key="FontColor3Brush" Color="{StaticResource FontColor3}"/>
+
+    <Color  x:Key="FontColor4">#27ADF5</Color>
+    <SolidColorBrush x:Key="FontColor4Brush" Color="{StaticResource FontColor4}"/>
+</ResourceDictionary>
