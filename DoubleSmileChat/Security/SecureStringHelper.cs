@@ -10,7 +10,11 @@ namespace DoubleSmileChat.Security
 {
     public static class SecureStringHelper
     {
-
+        /// <summary>
+        /// 解密字符串
+        /// </summary>
+        /// <param name="securePassword"></param>
+        /// <returns></returns>
         public static string UnSecure(this SecureString securePassword) 
         {
             //如果 SecureString 为 null，则返回空字符串

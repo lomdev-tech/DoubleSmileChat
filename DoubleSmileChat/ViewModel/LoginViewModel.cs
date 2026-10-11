@@ -14,19 +14,12 @@ namespace DoubleSmileChat.ViewModel
     /// </summary>
     public class LoginViewModel : BaseViewModel
     {
-        #region 私有成员
-
-        #endregion
 
         #region 公共属性
         /// <summary>
         /// 用户的邮箱地址
         /// </summary>
         public string Email { get; set; }
-        /// <summary>
-        /// 用户的密码
-        /// </summary>
-        public SecureString Password { get; set; }
         /// <summary>
         /// 是否正在执行登录操作
         /// </summary>
@@ -43,13 +36,13 @@ namespace DoubleSmileChat.ViewModel
 
         #region 构造器
 
-       
+
         public LoginViewModel()
         {
 
             //创建Command实例
             LoginCommand = new RelayParamaterizedCommand(async (parameter) => await Login(parameter));
-            
+
         }
         #endregion
 
@@ -61,18 +54,19 @@ namespace DoubleSmileChat.ViewModel
         /// <returns></returns>
         public async Task Login(object parameter)
         {
-            await RunCommand(() => this.LoginIsRunning)
+            await RunCommand(() => this.LoginIsRunning, async () => {
+                await Task.Delay(500);
                 var email = this.Email?.Trim();
+                //对密码解密
                 var password = (parameter as IHavePassword).SecurePassword.UnSecure();
-           
-        #endregion
+
+            });
+            
+
+            #endregion
 
 
-        #region Private Helper
 
-
-        #endregion
-
-
+        }
     }
 }
