@@ -26,3 +26,4 @@ D:\DoubleSmileChat\DoubleSmileChat\obj\Debug\DoubleSmileChat.csproj.CoreCompileI
 D:\DoubleSmileChat\DoubleSmileChat\obj\Debug\DoubleSm.992DE740.Up2Date
 D:\DoubleSmileChat\DoubleSmileChat\obj\Debug\DoubleSmileChat.exe
 D:\DoubleSmileChat\DoubleSmileChat\obj\Debug\DoubleSmileChat.pdb
+D:\DoubleSmileChat\DoubleSmileChat\obj\Debug\DoubleSmileChat.exe.config

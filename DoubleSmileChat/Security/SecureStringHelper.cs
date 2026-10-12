@@ -13,28 +13,27 @@ namespace DoubleSmileChat.Security
         /// <summary>
         /// 解密字符串
         /// </summary>
-        /// <param name="securePassword"></param>
+        /// <param name="secureString"></param>
         /// <returns></returns>
-        public static string UnSecure(this SecureString securePassword) 
+        public static string Unsecure(this SecureString secureString)
         {
-            //如果 SecureString 为 null，则返回空字符串
-            if (securePassword == null) 
-            {
+            // Make sure we have a secure string
+            if (secureString == null)
                 return string.Empty;
+
+            // Get a pointer for an unsecure string in memory
+            var unmanagedString = IntPtr.Zero;
+
+            try
+            {
+                // Unsecures the password
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(secureString);
+                return Marshal.PtrToStringUni(unmanagedString);
             }
-            //将非托管内存中的 Unicode 字符串的指针初始化为零
-            var unManagedString = IntPtr.Zero;
-            try 
+            finally
             {
-                //将 SecureString 转换为非托管内存中的 Unicode 字符串
-                unManagedString = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
-                //返回非托管内存中的 Unicode 字符串
-                return Marshal.PtrToStringUni(unManagedString);
-            } 
-            finally 
-            {
-                //释放非托管内存中的 Unicode 字符串
-                Marshal.ZeroFreeGlobalAllocUnicode(unManagedString);
+                // Clean up any memory allocation
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
     }

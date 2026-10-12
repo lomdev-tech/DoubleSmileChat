@@ -23,7 +23,7 @@
                 <StackPanel>
                     <TextBlock Text="注册" Foreground="{StaticResource ForgroundMainBrush}" FontFamily="{StaticResource LatoRegular}" FontSize="{StaticResource FontSizeLarge}"/>
                     <TextBlock Text="it's about to get fun" Foreground="{StaticResource ForegroundPlaceholderBrush}" FontSize="{StaticResource FontSizeRegular}"/>
-                    <TextBox Text="{Binding Email}"  Tag="请输入用户名" Style="{StaticResource InputButton}"/>
+                    <TextBox Text="{Binding Email}"  Tag="请输入邮箱" Style="{StaticResource InputButton}"/>
                     <PasswordBox x:Name="PasswordText" Tag="请输入密码" Style="{StaticResource InputButton}" vc:PasswordBoxMonitor.MonitorPassword="True"/>
                     <Button  Style="{StaticResource NextButton}" 
                              FontSize="{StaticResource FontSizeSmall}" 
